@@ -1,0 +1,21 @@
+{
+    "name": "Dashboard mDNS Inject",
+    "description": "Browses mDNS services on the local network and inject on dashboard page",
+    "version": "1.0",
+    "manifest_version": 2,
+    "content_scripts": [{
+        "js": ["contentscript.js"],
+        "matches": ["http://localhost:3000/*"]
+    }],
+    "background": {
+        "scripts":["background.js"]
+      },
+    "permissions": [
+        "management"
+      ],
+    "externally_connectable":{
+        "ids": [
+            "*"
+        ]
+    }
+}

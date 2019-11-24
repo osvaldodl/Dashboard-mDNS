@@ -1,0 +1,21 @@
+{
+  "name": "Dashboard mDNS",
+  "description": "Browses mDNS services on the local network and inject on dashboard page",
+  "manifest_version": 2,
+  "version": "1.0",
+  "app": {
+    "background": {
+      "scripts": ["background.js", "main.js", "dns.js"]      
+    }
+  }, 
+  "externally_connectable":{
+    "ids": [
+        "*"
+    ]
+  },
+  "sockets": {
+     "udp": { "bind": "*", "send": "*" }
+  },
+  "permissions": [ "system.network" ],
+  "icons": { "128": "img/icon-128.png", "16": "img/icon-16.png" }
+}
